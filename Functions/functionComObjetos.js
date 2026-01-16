@@ -32,8 +32,8 @@
 const meuLivro2 = {
     nome : 'Supernatural',
     paginas: 200,
-    genero: 'Terror'
-
+    genero: 'Terror',
+    preco: 150
 }
 
 
@@ -41,7 +41,8 @@ function criarLivro (livro) {
     let meuLivro = {
         nome: livro.nome,
         paginas: livro.paginas,
-        genero: livro.genero
+        genero: livro.genero,
+        preco: livro.preco
     }
 
     return meuLivro

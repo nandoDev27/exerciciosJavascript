@@ -13,3 +13,14 @@
 
 //2 - Soma de números
 
+//1+2+3+4
+
+function somar(num){
+    if (num === 1 ){
+       return 1
+    } else {
+      return num + somar(num - 1)
+    }
+}
+
+console.log(somar(4))

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 2rem; */
+}
+
+#formarTime{
+    margin-top: 1rem;
+}
+
+#formacaoEscalados{
+    margin: 1rem auto;
+    background-color: #0a6b01;
+    min-height: 80vh;
+    width: 60%;;
+}
+
+.playerFree{
+    border: 1px solid black;
+    width: 20%;
+}
+
+.playerFree:hover{
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    background-color: #0a6b01;
+}
+
+.playerSelect{
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    background-color: #0a6b01;
+}

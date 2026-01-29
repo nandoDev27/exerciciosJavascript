@@ -1,56 +1,53 @@
 function addPlayer() {
-    let position = document.getElementById('position')
-    let name = document.getElementById('name')
-    let numberShirt = document.getElementById('numberShirt')
+    let position = document.getElementById('position').value
+    let name = document.getElementById('name').value
+    let numberShirt = document.getElementById('numberShirt').value
 
-    const timeEscalado = document.getElementById('timeEscalado')
-
-    const h5 = document.createElement('h5')
-    h5.innerText = 'Jogador'
+    const timeEscalado = document.getElementById('listPlayer')
 
     const playerLi = document.createElement('li')
-    playerLi.id = numberShirt.value
-
-    const positionP = document.createElement('p')
-    positionP.innerText = position.value
-
-    const nameP = document.createElement('p')
-    nameP.innerText = name.value
-
-    const numberP = document.createElement('p')
-    numberP.innerText = numberShirt.value
-    numberP.className = 'number'
+    playerLi.id = numberShirt
+    playerLi.className = 'playerFree'
+    playerLi.innerText = `Posição ${position} Jogador: ${name} Camisa: ${numberShirt}`
 
     const confirmar = confirm('Deseja confirmar a escalação?')
     if (confirmar) {
-        position.value = ''
-        name.value = ''
-        numberShirt.value = ''
-        playerLi.append(h5, positionP, nameP, numberP)
+        document.getElementById('position').value = ''
+        document.getElementById('name').value = ''
+        document.getElementById('numberShirt').value = ''
         timeEscalado.appendChild(playerLi)
     } else {
         alert('Ação cancelada!')
     }
 }
 
-function removePlayer(){
-    const timeEscalado = document.getElementById('timeEscalado')
-    const numberShirtRemove = document.getElementById('numberShirtRemove')
-    const player = document.querySelectorAll('#listPLayer > li')
+function removePlayer() {
+    const timeEscalado = document.getElementById('listPlayer')
+    const numberShirtRemove = document.getElementById('numberShirtRemove').value
+    const playerRemove = document.querySelectorAll('#listPlayer > li')
 
-    console.log(player)
     const confirmar = confirm('Deseja remover o jogador? ')
+    console.log(playerRemove)
 
-    if(confirmar){
-        player.forEach((e) => {
-        if(e.id == numberShirtRemove.value){
-            numberShirtRemove.value = ''
-            timeEscalado.removeChild(e)
-        }
-    })
+    if (confirmar) {
+        playerRemove.forEach((e) => {
+            if (e.id == numberShirtRemove) {
+                timeEscalado.removeChild(e)
+            }
+        })
     } else {
         alert('Ação cancelada!')
     }
-
-
 }
+
+// function transferPlayer(){
+//     const transfer = document.getElementById('transfer')
+//     const playerTransfer = [...document.querySelectorAll('#listPlayer > li')]
+
+//     playerTransfer.map((element) => {
+//         element.addEventListener('click', (ev)=>{
+//             console.log(ev.target)
+//         })
+//     })
+// }
+
